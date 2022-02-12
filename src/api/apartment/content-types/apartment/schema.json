@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apartments",
+  "info": {
+    "singularName": "apartment",
+    "pluralName": "apartments",
+    "displayName": "Apartment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "availableRoommates": {
+      "type": "integer"
+    },
+    "rooms": {
+      "type": "integer"
+    },
+    "surface": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "availability": {
+      "type": "date"
+    },
+    "campus": {
+      "type": "enumeration",
+      "enum": [
+        "north",
+        "south"
+      ],
+      "default": "south"
+    }
+  }
+}

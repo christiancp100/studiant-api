@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: studiant-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: studiant-api
+  template:
+    metadata:
+      labels:
+        app: studiant-api
+    spec:
+      containers:
+        - name: studiant-api
+          image: <IMAGE>
+          ports:
+            - containerPort: 1337
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: database-secret
+                  key: database-url
+            - name: NODE_ENV
+              value: production
+            - name: API_URL
+              value: studiant-api
+            - name: DO_SPACE_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: do-space-secret
+                  key: do-space-access-key
+            - name: DO_SPACE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: do-space-secret
+                  key: do-space-secret-key
+            - name: DO_SPACE_ENDPOINT
+              value: https://glub-static.fra1.digitaloceanspaces.com
+            - name: DO_SPACE_BUCKET
+              value: glub-static
+            - name: DO_SPACE_DIRECTORY
+              value: media
+            - name: DO_SPACE_CDN
+              value: https://glub-static.fra1.cdn.digitaloceanspaces.com
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: studiant-api
+spec:
+  selector:
+    app: studiant-api
+  ports:
+    - protocol: TCP
+      port: 1337
+      targetPort: 1337

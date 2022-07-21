@@ -41,8 +41,6 @@ spec:
               value: https://glub-static.fra1.digitaloceanspaces.com
             - name: DO_SPACE_BUCKET
               value: glub-static
-            - name: DO_SPACE_DIRECTORY
-              value: media
             - name: DO_SPACE_CDN
               value: https://glub-static.fra1.cdn.digitaloceanspaces.com
 ---

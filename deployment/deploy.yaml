@@ -27,6 +27,7 @@ spec:
               value: production
             - name: API_URL
               value: studiant-api
+
             - name: DO_SPACE_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
@@ -38,7 +39,7 @@ spec:
                   name: do-space-secret
                   key: do-space-secret-key
             - name: DO_SPACE_ENDPOINT
-              value: https://glub-static.fra1.digitaloceanspaces.com
+              value: fra1.digitaloceanspaces.com
             - name: DO_SPACE_BUCKET
               value: glub-static
             - name: DO_SPACE_CDN

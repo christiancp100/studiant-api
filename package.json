@@ -10,13 +10,14 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.0.7",
-    "@strapi/plugin-users-permissions": "4.0.7",
-    "@strapi/strapi": "4.0.7",
+    "@strapi/plugin-graphql": "^4.2.3",
+    "@strapi/plugin-i18n": "4.2.0",
+    "@strapi/plugin-users-permissions": "4.2.0",
+    "@strapi/strapi": "4.2.0",
     "pg": "^8.7.3",
     "pg-connection-string": "^2.5.0",
     "sqlite3": "5.0.2",
-    "strapi-provider-upload-cloudinary": "^3.6.8"
+    "strapi-provider-upload-cloudinary": "^3.6.10"
   },
   "author": {
     "name": "A Strapi developer"
@@ -26,7 +27,7 @@
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
+    "yarn": ">=1.22.18"
   },
   "license": "MIT"
 }

@@ -53,8 +53,7 @@ spec:
             - name: DO_SPACE_BUCKET
               value: glub-static
             - name: DO_SPACE_DIRECTORY
-              value: media
-
+              value: /media
 ---
 
 ---

@@ -25,6 +25,6 @@ jobs:
       - name: Save DigitalOcean kubeconfig with short-lived credentials
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{ secrets.CLUSTER_NAME }}
       - name: Deploy to DigitalOcean Kubernetes
-        run: kubectl apply -f $GITHUB_WORKSPACE/deployment/deploy.yaml
+        run: kubectl apply -f $GITHUB_WORKSPACE/deployment/deploy.yaml -n ${{secrets.NAMESPACE}}
       - name: Verify deployment
         run: kubectl rollout status deployment/studiant-api -n ${{secrets.NAMESPACE}}

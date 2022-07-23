@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: studiant-api
-          image: christiancp/studiant-api:4210c9f
+          image: <IMAGE>
           ports:
             - containerPort: 1337
           env:

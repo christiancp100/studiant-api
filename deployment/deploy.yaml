@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: studiant-api
-          image: <IMAGE>
+          image: christiancp/studiant-api:abbe108
           ports:
             - containerPort: 1337
           env:
@@ -28,6 +28,11 @@ spec:
                 secretKeyRef:
                   name: studiant-api-secret
                   key: jwt-secret
+            - name: API_TOKEN_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: studiant-api-secret
+                  key: api-token-salt
             - name: NODE_ENV
               value: production
             - name: API_URL

@@ -54,8 +54,6 @@ spec:
               value: glub-static
             - name: DO_SPACE_DIRECTORY
               value: media
-            - name: DO_SPACE_CDN
-              value: fra1.cdn.digitaloceanspaces.com
 
 ---
 

@@ -23,6 +23,11 @@ spec:
                 secretKeyRef:
                   name: database-secret
                   key: database-url
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: studiant-api-secret
+                  key: jwt-secret
             - name: NODE_ENV
               value: production
             - name: API_URL
@@ -46,6 +51,7 @@ spec:
               value: media
             - name: DO_SPACE_CDN
               value: https://glub-static.fra1.cdn.digitaloceanspaces.com
+
 ---
 
 ---

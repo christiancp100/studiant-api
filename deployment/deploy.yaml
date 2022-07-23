@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: studiant-api
-          image: christiancp/studiant-api:abbe108
+          image: <IMAGE>
           ports:
             - containerPort: 1337
           env:
@@ -49,14 +49,11 @@ spec:
                   name: do-space-secret
                   key: do-space-secret-key
             - name: DO_SPACE_ENDPOINT
-              value: https://fra1.digitaloceanspaces.com
+              value: fra1.digitaloceanspaces.com
             - name: DO_SPACE_BUCKET
               value: glub-static
             - name: DO_SPACE_DIRECTORY
               value: media
-            - name: DO_SPACE_CDN
-              value: https://glub-static.fra1.cdn.digitaloceanspaces.com
-
 ---
 
 ---
